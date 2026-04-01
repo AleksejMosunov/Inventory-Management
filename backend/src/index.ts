@@ -40,15 +40,8 @@ app.use(
     credentials: true,
   }),
 );
-app.options(
-  "/*",
-  cors({
-    origin: process.env.FRONTEND_URL || "http://localhost:3010",
-    methods: ["GET", "POST", "DELETE", "PATCH", "PUT", "OPTIONS"],
-    allowedHeaders: ["Content-Type", "Authorization"],
-    credentials: true,
-  }),
-);
+// Preflight OPTIONS are handled by the global CORS middleware above.
+// Removing explicit app.options(...) to avoid path parsing issues.
 app.use(express.json());
 
 app.get("/api/health", (_req: Request, res: Response) => {
