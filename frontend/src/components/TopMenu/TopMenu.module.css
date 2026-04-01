@@ -29,3 +29,13 @@
   padding: 0.4rem 0.6rem;
   border-radius: 8px;
 }
+
+@media (max-width: 575px) {
+  .top-menu__clock {
+    display: none;
+  }
+
+  .top-menu__meta {
+    gap: 0.5rem;
+  }
+}

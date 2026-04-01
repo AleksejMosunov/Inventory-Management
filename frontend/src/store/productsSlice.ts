@@ -52,7 +52,9 @@ const productsSlice = createSlice({
         state.items = action.payload;
         state.loading = false;
         if (action.meta.arg === undefined) {
-          state.allTypes = Array.from(new Set(action.payload.map((p) => p.type)));
+          state.allTypes = Array.from(
+            new Set(action.payload.map((p) => p.type)),
+          );
         }
       })
       .addCase(fetchProducts.rejected, (state) => {

@@ -17,15 +17,13 @@ export default function NavigationMenu(): React.ReactElement {
           href="/orders"
           className={`${styles.nav__link} ${pathname === '/orders' ? styles['nav__link--active'] : ''}`}
         >
-          <span>O</span>
-          <span>{t('orders')}</span>
+          {t('orders')}
         </Link>
         <Link
           href="/products"
           className={`${styles.nav__link} ${pathname === '/products' ? styles['nav__link--active'] : ''}`}
         >
-          <span>P</span>
-          <span>{t('products')}</span>
+          {t('products')}
         </Link>
       </div>
     </nav>
