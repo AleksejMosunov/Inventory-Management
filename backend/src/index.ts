@@ -20,7 +20,7 @@ const server = http.createServer(app);
 
 const io = new Server(server, {
   cors: {
-    origin: process.env.FRONTEND_URL || "http://localhost:3000",
+    origin: process.env.FRONTEND_URL || "http://localhost:3010",
     methods: ["GET", "POST"],
   },
 });
@@ -34,7 +34,7 @@ Product.belongsTo(Order, { as: "order", foreignKey: "orderId" });
 
 app.use(
   cors({
-    origin: process.env.FRONTEND_URL || "http://localhost:3000",
+    origin: process.env.FRONTEND_URL || "http://localhost:3010",
     methods: ["GET", "POST", "DELETE", "PATCH", "PUT", "OPTIONS"],
     allowedHeaders: ["Content-Type", "Authorization"],
     credentials: true,
@@ -43,7 +43,7 @@ app.use(
 app.options(
   "*",
   cors({
-    origin: process.env.FRONTEND_URL || "http://localhost:3000",
+    origin: process.env.FRONTEND_URL || "http://localhost:3010",
     methods: ["GET", "POST", "DELETE", "PATCH", "PUT", "OPTIONS"],
     allowedHeaders: ["Content-Type", "Authorization"],
     credentials: true,
@@ -66,7 +66,7 @@ app.use((error: Error, _req: Request, res: Response, _next: NextFunction) => {
 
 setupSessionCounter(io);
 
-const port = Number(process.env.PORT || 5000);
+const port = Number(process.env.PORT || 5010);
 
 const startServer = async (): Promise<void> => {
   try {

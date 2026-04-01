@@ -8,5 +8,5 @@ RUN npm ci
 COPY . .
 RUN npm run build
 
-EXPOSE 5000
+EXPOSE 5010
 CMD ["npm", "start"]

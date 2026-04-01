@@ -18,8 +18,8 @@ SPA приложение для управления приходами и пр�
 docker-compose up --build
 ```
 
-Frontend: http://localhost:3000
-Backend: http://localhost:5000/api/health
+Frontend: http://localhost:3010
+Backend: http://localhost:5010/api/health
 
 ## Локальный запуск
 

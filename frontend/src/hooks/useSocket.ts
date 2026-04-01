@@ -8,7 +8,7 @@ export const useSocket = (): number => {
 
   useEffect(() => {
     const socket: Socket = io(
-      process.env.NEXT_PUBLIC_SOCKET_URL || "http://localhost:5000",
+      process.env.NEXT_PUBLIC_SOCKET_URL || "http://localhost:5010",
     );
 
     socket.on("activeSessionsCount", (count: number) => {
