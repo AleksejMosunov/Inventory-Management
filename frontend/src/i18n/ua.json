@@ -17,5 +17,10 @@
   "orderDetails": "Деталі приходу",
   "productsCount": "Кількість продуктів",
   "totalValue": "Загальна вартість",
-  "description": "Опис"
+  "description": "Опис",
+  "photo": "Фото",
+  "title": "Назва",
+  "type": "Тип",
+  "guarantee": "Гарантія",
+  "order": "Прихід"
 }

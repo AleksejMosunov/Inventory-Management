@@ -17,5 +17,10 @@
   "orderDetails": "Order details",
   "productsCount": "Products count",
   "totalValue": "Total value",
-  "description": "Description"
+  "description": "Description",
+  "photo": "Photo",
+  "title": "Title",
+  "type": "Type",
+  "guarantee": "Guarantee",
+  "order": "Order"
 }

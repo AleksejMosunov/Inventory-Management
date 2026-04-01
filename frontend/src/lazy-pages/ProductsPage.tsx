@@ -40,13 +40,13 @@ export default function ProductsPage(): React.ReactElement {
         <table className="table table-striped align-middle">
           <thead>
             <tr>
-              <th>Photo</th>
-              <th>Title</th>
-              <th>Type</th>
-              <th>Guarantee</th>
+              <th>{t('photo')}</th>
+              <th>{t('title')}</th>
+              <th>{t('type')}</th>
+              <th>{t('guarantee')}</th>
               <th>USD</th>
               <th>UAH</th>
-              <th>Order</th>
+              <th>{t('order')}</th>
               <th />
             </tr>
           </thead>
