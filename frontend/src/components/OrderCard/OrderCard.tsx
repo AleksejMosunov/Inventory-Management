@@ -1,5 +1,6 @@
 'use client';
 
+import { useTranslation } from 'react-i18next';
 import { Order } from '@/types/order';
 import { formatDateLong, formatDateShort } from '@/utils/formatDate';
 import { formatPrice } from '@/utils/formatPrice';
@@ -12,6 +13,8 @@ interface OrderCardProps {
 }
 
 export default function OrderCard({ order, locale, onOpen, onDelete }: OrderCardProps): React.ReactElement {
+  const { t } = useTranslation();
+
   return (
     <div className="card mb-3 order-card" role="button" onClick={() => onOpen(order.id)}>
       <div className="card-body d-flex justify-content-between align-items-center flex-wrap gap-3">
@@ -21,7 +24,7 @@ export default function OrderCard({ order, locale, onOpen, onDelete }: OrderCard
           <p className="mb-1 text-muted">{formatDateLong(order.createdAt, locale)}</p>
         </div>
         <div>
-          <p className="mb-1">Products: {order.productsCount ?? 0}</p>
+          <p className="mb-1">{t('products')}: {order.productsCount ?? 0}</p>
           <p className="mb-1">{formatPrice(order.totalUsd ?? 0, 'USD')}</p>
           <p className="mb-0">{formatPrice(order.totalUah ?? 0, 'UAH')}</p>
         </div>
@@ -33,7 +36,7 @@ export default function OrderCard({ order, locale, onOpen, onDelete }: OrderCard
             onDelete(order);
           }}
         >
-          Delete
+          {t('delete')}
         </button>
       </div>
     </div>
