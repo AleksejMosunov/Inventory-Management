@@ -22,14 +22,14 @@ export default function DeleteConfirmModal({
     <AnimatePresence>
       {isOpen ? (
         <motion.div
-          className="modal fade show d-block"
+          className="modal show d-block"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
           aria-modal="true"
           role="dialog"
         >
-          <div className="modal-dialog modal-dialog-centered">
+          <div className="modal-dialog modal-dialog-centered" style={{ transform: 'none' }}>
             <motion.div
               className="modal-content"
               initial={{ scale: 0.9 }}
