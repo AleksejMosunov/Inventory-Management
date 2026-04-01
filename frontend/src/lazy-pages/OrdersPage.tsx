@@ -1,5 +1,6 @@
 'use client';
 
+import { motion } from 'framer-motion';
 import { useEffect, useMemo, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import DeleteConfirmModal from '@/components/DeleteConfirmModal/DeleteConfirmModal';
@@ -33,7 +34,11 @@ export default function OrdersPage(): React.ReactElement {
   return (
     <PageTransition>
       <div className="row g-3">
-        <section className="col-12 col-lg-7">
+        <motion.section
+          layout
+          transition={{ duration: 0.3, ease: 'easeInOut' }}
+          className={`col-12${selectedOrder ? ' col-lg-7' : ''}`}
+        >
           <h2 className="mb-3">{t('orders')}</h2>
           {loading ? <Spinner /> : null}
           {items.map((order) => (
@@ -47,7 +52,7 @@ export default function OrdersPage(): React.ReactElement {
               onDelete={(nextOrder) => setModalOrder(nextOrder)}
             />
           ))}
-        </section>
+        </motion.section>
         <section className="col-12 col-lg-5">
           <OrderDetail order={selectedOrder} onClose={() => dispatch(clearSelectedOrder())} />
         </section>
