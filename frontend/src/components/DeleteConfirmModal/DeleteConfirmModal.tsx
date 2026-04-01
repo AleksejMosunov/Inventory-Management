@@ -23,8 +23,14 @@ export default function DeleteConfirmModal({
       {isOpen ? (
         <>
           <motion.div
-            className="modal-backdrop show"
-            style={{ zIndex: 1040 }}
+            style={{
+              position: 'fixed',
+              inset: 0,
+              zIndex: 1040,
+              backdropFilter: 'blur(4px)',
+              WebkitBackdropFilter: 'blur(4px)',
+              backgroundColor: 'rgba(0,0,0,0.15)',
+            }}
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}

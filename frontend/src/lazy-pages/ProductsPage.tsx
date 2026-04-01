@@ -40,20 +40,20 @@ export default function ProductsPage(): React.ReactElement {
         <table className="table table-striped align-middle">
           <thead>
             <tr>
-              <th>{t('photo')}</th>
+              <th className="d-none d-sm-table-cell">{t('photo')}</th>
               <th>{t('title')}</th>
               <th>{t('type')}</th>
               <th>{t('guarantee')}</th>
               <th>USD</th>
-              <th>UAH</th>
-              <th>{t('order')}</th>
+              <th className="d-none d-md-table-cell">UAH</th>
+              <th className="d-none d-md-table-cell">{t('order')}</th>
               <th />
             </tr>
           </thead>
           <tbody>
             {items.map((product) => (
               <tr key={product.id}>
-                <td>
+                <td className="d-none d-sm-table-cell">
                   {product.photo ? (
                     // eslint-disable-next-line @next/next/no-img-element
                     <img src={product.photo} alt={product.title} width={48} height={48} style={{ objectFit: 'cover' }} />
@@ -68,8 +68,8 @@ export default function ProductsPage(): React.ReactElement {
                   <div>{product.guaranteeEnd ? formatDateLong(product.guaranteeEnd, locale) : '-'}</div>
                 </td>
                 <td>{formatPrice(Number(product.priceUsd), 'USD')}</td>
-                <td>{formatPrice(Number(product.priceUah), 'UAH')}</td>
-                <td>{product.order?.title || '-'}</td>
+                <td className="d-none d-md-table-cell">{formatPrice(Number(product.priceUah), 'UAH')}</td>
+                <td className="d-none d-md-table-cell">{product.order?.title || '-'}</td>
                 <td>
                   <button type="button" className="btn btn-outline-danger btn-sm" onClick={() => setModalProduct(product)}>
                     {t('delete')}
