@@ -1,0 +1,21 @@
+{
+  "appName": "Inventory Management",
+  "orders": "Приходи",
+  "products": "Продукти",
+  "delete": "Видалити",
+  "cancel": "Скасувати",
+  "confirmDelete": "Ви впевнені, що хочете видалити {{name}}?",
+  "sessions": "Активні сесії",
+  "filterByType": "Фільтр за типом",
+  "allTypes": "Усі типи",
+  "login": "Вхід",
+  "register": "Реєстрація",
+  "email": "Email",
+  "password": "Пароль",
+  "confirmPassword": "Підтвердьте пароль",
+  "logout": "Вийти",
+  "orderDetails": "Деталі приходу",
+  "productsCount": "Кількість продуктів",
+  "totalValue": "Загальна вартість",
+  "description": "Опис"
+}

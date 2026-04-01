@@ -1,0 +1,21 @@
+{
+  "appName": "Inventory Management",
+  "orders": "Orders",
+  "products": "Products",
+  "delete": "Delete",
+  "cancel": "Cancel",
+  "confirmDelete": "Are you sure you want to delete {{name}}?",
+  "sessions": "Active sessions",
+  "filterByType": "Filter by type",
+  "allTypes": "All types",
+  "login": "Login",
+  "register": "Register",
+  "email": "Email",
+  "password": "Password",
+  "confirmPassword": "Confirm password",
+  "logout": "Logout",
+  "orderDetails": "Order details",
+  "productsCount": "Products count",
+  "totalValue": "Total value",
+  "description": "Description"
+}

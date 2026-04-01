@@ -1,0 +1,31 @@
+.top-menu {
+  background: linear-gradient(120deg, #f1f8e9 0%, #ffffff 55%, #ebf7e1 100%);
+  border-bottom: 1px solid #dce9d1;
+  padding: 0.75rem 1rem;
+  position: sticky;
+  top: 0;
+  z-index: 40;
+}
+
+.top-menu__brand {
+  font-family: var(--font-heading), sans-serif;
+  color: #2f4f2f;
+  font-size: 1.1rem;
+  font-weight: 700;
+}
+
+.top-menu__meta {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  color: #34495e;
+}
+
+.top-menu__clock,
+.top-menu__sessions {
+  font-size: 0.9rem;
+  background: #ffffff;
+  border: 1px solid #d8e6ce;
+  padding: 0.4rem 0.6rem;
+  border-radius: 8px;
+}
