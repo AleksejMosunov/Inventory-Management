@@ -4,12 +4,14 @@ import { productsApi } from "@/services/productsApi";
 
 interface ProductsState {
   items: Product[];
+  allTypes: string[];
   loading: boolean;
   filterType: string;
 }
 
 const initialState: ProductsState = {
   items: [],
+  allTypes: [],
   loading: false,
   filterType: "",
 };
@@ -49,6 +51,9 @@ const productsSlice = createSlice({
       .addCase(fetchProducts.fulfilled, (state, action) => {
         state.items = action.payload;
         state.loading = false;
+        if (action.meta.arg === undefined) {
+          state.allTypes = Array.from(new Set(action.payload.map((p) => p.type)));
+        }
       })
       .addCase(fetchProducts.rejected, (state) => {
         state.loading = false;

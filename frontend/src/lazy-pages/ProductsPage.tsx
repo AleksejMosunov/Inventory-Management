@@ -15,7 +15,7 @@ import { formatPrice } from '@/utils/formatPrice';
 export default function ProductsPage(): React.ReactElement {
   const { i18n, t } = useTranslation();
   const dispatch = useAppDispatch();
-  const { items, loading, filterType } = useAppSelector((state) => state.products);
+  const { items, allTypes, loading, filterType } = useAppSelector((state) => state.products);
   const [modalProduct, setModalProduct] = useState<Product | null>(null);
 
   useEffect(() => {
@@ -23,7 +23,7 @@ export default function ProductsPage(): React.ReactElement {
   }, [dispatch, filterType]);
 
   const locale = useMemo(() => (i18n.language === 'ua' ? 'uk-UA' : 'en-US'), [i18n.language]);
-  const types = useMemo(() => Array.from(new Set(items.map((item) => item.type))), [items]);
+  const types = allTypes;
 
   return (
     <PageTransition>
