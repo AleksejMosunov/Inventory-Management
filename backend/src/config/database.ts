@@ -14,7 +14,16 @@ export const sequelize = new Sequelize(
   },
 );
 
-export const connectDatabase = async (): Promise<void> => {
-  await sequelize.authenticate();
-  await sequelize.sync();
+export const connectDatabase = async (retries = 5, delay = 3000): Promise<void> => {
+  for (let attempt = 1; attempt <= retries; attempt++) {
+    try {
+      await sequelize.authenticate();
+      await sequelize.sync();
+      return;
+    } catch (err) {
+      if (attempt === retries) throw err;
+      console.warn(`DB connection attempt ${attempt}/${retries} failed. Retrying in ${delay / 1000}s...`);
+      await new Promise((resolve) => setTimeout(resolve, delay));
+    }
+  }
 };

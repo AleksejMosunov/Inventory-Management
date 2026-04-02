@@ -1,9 +1,12 @@
 'use client';
 
 import { useEffect, useMemo, useState } from 'react';
+import { useRouter } from 'next/navigation';
 import { useTranslation } from 'react-i18next';
 import { formatDateTime } from '@/utils/formatDate';
 import { useSocket } from '@/hooks/useSocket';
+import { useAppDispatch } from '@/hooks/redux';
+import { clearToken } from '@/store/authSlice';
 import styles from './TopMenu.module.css';
 
 export default function TopMenu(): React.ReactElement {
@@ -11,6 +14,14 @@ export default function TopMenu(): React.ReactElement {
   const [now, setNow] = useState<Date | null>(null);
   const [mounted, setMounted] = useState(false);
   const sessionsCount = useSocket();
+  const dispatch = useAppDispatch();
+  const router = useRouter();
+
+  const handleLogout = (): void => {
+    localStorage.removeItem('token');
+    dispatch(clearToken());
+    router.replace('/login');
+  };
 
   useEffect(() => {
     setMounted(true);
@@ -50,6 +61,13 @@ export default function TopMenu(): React.ReactElement {
               <option value="ua">UA</option>
             </select>
           )}
+          <button
+            className={styles['top-menu__logout']}
+            onClick={handleLogout}
+            title={t('logout')}
+          >
+            {t('logout')}
+          </button>
         </div>
       </div>
     </header>

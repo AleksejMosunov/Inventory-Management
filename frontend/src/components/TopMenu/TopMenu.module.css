@@ -30,6 +30,23 @@
   border-radius: 8px;
 }
 
+.top-menu__logout {
+  font-size: 0.85rem;
+  padding: 0.35rem 0.75rem;
+  border-radius: 8px;
+  border: 1px solid #c0392b;
+  background: transparent;
+  color: #c0392b;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: background 0.15s, color 0.15s;
+}
+
+.top-menu__logout:hover {
+  background: #c0392b;
+  color: #ffffff;
+}
+
 @media (max-width: 575px) {
   .top-menu__clock {
     display: none;
